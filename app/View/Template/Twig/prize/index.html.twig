@@ -1,0 +1,6 @@
+{% extends 'layouts/layout.html.twig' %}
+{% block content %}
+	{% for prize in prizes %}
+		<div>{{ prize.amount }}</div>
+	{% endfor %}
+{% endblock %}

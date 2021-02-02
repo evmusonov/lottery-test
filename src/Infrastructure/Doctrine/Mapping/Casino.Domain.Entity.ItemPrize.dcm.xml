@@ -1,0 +1,18 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Casino\Domain\Entity\ItemPrize" table="item_prize">
+        <id name="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+        <many-to-one field="itemId" target-entity="Item">
+            <join-column name="item_id" referenced-column-name="id" />
+        </many-to-one>
+        <field name="uid" type="string" />
+        <field name="userId" column="user_id" type="integer" />
+        <field name="isAccepted" column="is_accepted" type="integer" />
+    </entity>
+</doctrine-mapping>

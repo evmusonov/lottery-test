@@ -1,0 +1,23 @@
+{% extends 'layouts/layout.html.twig' %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<h1 class="h2 mb-3">Profile</h1>
+			<div>{{ user.email }}</div>
+			<div>Bonus: {{ user.bonus }}</div>
+			<div>Cash: {{ user.cash }}</div>
+			<div>
+				<div>My items:</div>
+				<ul>
+					{% for item in user.items %}
+						<li>{{ item.name }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<h2 class="h3 mt-3">Try your luck</h2>
+			<a href="/prizes/spin">
+				<button type="button" class="btn btn-primary">Take a prize</button>
+			</a>
+		</div>
+	</div>
+{% endblock %}

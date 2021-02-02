@@ -1,0 +1,6 @@
+{% extends 'layouts/layout.html.twig' %}
+{% block content %}
+	{% for user in users %}
+		<div>{{ user.email }}</div>
+	{% endfor %}
+{% endblock %}

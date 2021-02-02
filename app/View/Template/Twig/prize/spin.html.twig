@@ -1,0 +1,25 @@
+{% extends 'layouts/layout.html.twig' %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<h1 class="h2 mb-3">You won</h1>
+			<div>{{ prize.title }}: {{ prize.value }}</div>
+			<div class="row mt-3">
+				<div class="col-md-6">
+					<form action="/prizes/accept" method="POST">
+						<input type="hidden" value="{{ prize.uid }}" name="uid">
+						<input type="hidden" name="type" value="{{ prize.type }}">
+						<input type="submit" value="Accept" class="btn btn-success">
+					</form>
+				</div>
+				<div class="col-md-6">
+					<form action="/prizes/decline" method="POST">
+						<input type="hidden" value="{{ prize.uid }}" name="uid">
+						<input type="hidden" name="type" value="{{ prize.type }}">
+						<input type="submit" value="Decline" class="btn btn-warning">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
